@@ -28,5 +28,5 @@ jobs:
         docker push ${{ secrets.DOCKER_USERNAME }}/my-nginx:latest
 
     - name: Deploy with Docker Compose
-      run: |
-        ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} 'docker-compose -f /path/to/your/docker-compose.yml up -d'
+      run:
+        docker-compose -f /path/to/your/docker-compose.yml up -d
