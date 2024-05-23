@@ -2,8 +2,8 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches:
-      - 'main'
+    paths:
+      - 'index.html'
 
 jobs:
   docker-build:
@@ -36,4 +36,3 @@ jobs:
     name: Docker Run
     steps:
       - run: docker run santorinirings/prueba-craftech:${{ github.sha }}
-
